@@ -51,3 +51,13 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+#start-game{
+  border-radius: 25px;
+  width: 10rem;
+  height: 3rem;
+  background-color: black;
+  color: whitesmoke;
+  border: none;
+  font-size: 1rem;
+}

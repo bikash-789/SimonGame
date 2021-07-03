@@ -7,19 +7,28 @@ var level = -1;
 var firstKeyPress = true;
 var lastIndex = -1;
 //For starting the game with key press
+$("#start-game").click(()=>{
+    if(firstKeyPress){
+        nextSequence();
+        firstKeyPress=false;
+    }
+});
+
 function startGame(){
     firstKeyPress=true;
     userClickedPattern = [];
     gamePattern=[];
     level = -1;
     $("#level-title").text("Press A Key to Start");
-    $(document).keypress(()=>{
+    if($(document).keypress){
+        $(document).keypress(()=>{
         if(firstKeyPress){
             nextSequence();
             firstKeyPress=false;
         }
-    });
+    })}
 }
+
 startGame();
 
 
@@ -83,7 +92,6 @@ function checkSequence(currentLevel){
             $("body").removeClass("game-over");
             startGame();
         }, 200);
-        
     }
 
 }
