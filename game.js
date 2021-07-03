@@ -78,11 +78,12 @@ function checkSequence(currentLevel){
         //if there is wrong sequence, then display game over and ask to press any key to restart the game
         playSound("wrong");
         $("body").addClass("game-over");
+        $("#level-title").text("Game Over, Press a key to restart");
         setTimeout(()=>{
             $("body").removeClass("game-over");
+            startGame();
         }, 200);
-        $("#level-title").text("Game Over!");
-        startGame();
+        
     }
 
 }
